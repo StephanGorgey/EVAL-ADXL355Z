@@ -44,7 +44,7 @@
 #define Pi            3.1415926535      // define Pi as math PI --> 3.1415926535
 
 // ------------------------- Declare Global Variables ------------------------- // 
-int ADXL355 = 0x53;                     // ADXL355 I2C address - 0x53
+int ADXL355 = 0x1D;                     // ADXL355 I2C address - 0x53
 float x,y,z;                            // x,y,z initiated as float
 float range;                            // range initiated as float
 float rollF,pitchF=0;                   // rollF,pitchF initiated as float
@@ -53,7 +53,7 @@ uint8_t enable(uint8_t);                // enable initiated as an unidentified i
 // Setup
 void setup() 
 {   
-  Serial.begin(9600);                   // Initiate serial communication
+  Serial.begin(115200);                   // Initiate serial communication
   Wire.begin();                         // Initiate the Wire library
   reset();                              // call function reset()
   enable(0x00);                         // call function enable() and write 0X00
